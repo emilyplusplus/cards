@@ -51,8 +51,9 @@
     }),
     methods: {
       handleDrag({ target, transform }) {
-        console.log('onDrag left, top', transform);
+        //console.log('onDrag left, top', transform);
         target.style.transform = transform;
+        window.socket.emit('card_moved', transform);
       },
       handleResize({
         target, width, height, delta,
@@ -78,7 +79,11 @@
       },
     },
     mounted() {
-      
+      window.socket.on('card_moved', function(msg){
+        //console.log(msg)
+        var x = document.getElementsByClassName("moveable")[0]
+        x.style.transform = msg
+      });
     },
   }
 </script>
