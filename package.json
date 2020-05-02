@@ -2,7 +2,7 @@
   "name": "cards",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://192.168.86.56:3000/",
+  "proxy": "http://192.168.86.191:3000/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
